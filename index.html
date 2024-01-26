@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prácticas con Vue 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+   
+
+
+
+    <did id="myapp">
+        <h1>Bandas y canción <small>{{mensaje}}</small> </span></h1>
+
+        <input
+          type="text"
+          v-model="mensaje"
+          @keyup.enter="addMensaje"
+          >
+
+        <ul >
+            <li v-for="({banda, cancion}, index) in bandas">
+                    <span>{{index + 1}} - {{banda}} -- {{cancion}}</span>
+            </li>
+        </ul>
+
+    </did>
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>
