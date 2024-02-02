@@ -8,25 +8,22 @@
 </head>
 <body>
    
+    <div class="myapp">
+        <h1>Bandas y canción</h1>
 
+        <input type="text" @keyup.enter="addSaludo" v-model="saludo">
+        <button @click="addSaludoPrimero()">Agregar de primero</button>
 
-
-    <did id="myapp">
-        <h1>Bandas y canción <small>{{mensaje}}</small> </span></h1>
-
-        <input
-          type="text"
-          v-model="mensaje"
-          @keyup.enter="addMensaje"
-          >
-
-        <ul >
+        <ul v-if="bandas.length >= 5">
             <li v-for="({banda, cancion}, index) in bandas">
-                    <span>{{index + 1}} - {{banda}} -- {{cancion}}</span>
+                    <span>{{index + 1}}. {{banda}}</span>
+                    <blockquote v-if="cancion">--{{cancion}}</blockquote>
             </li>
         </ul>
 
-    </did>
+        <button @click="deleteSaludo()">Eliminar</button>
+      
+    </div>
 
 
     <script src="index.js"></script>
