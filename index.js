@@ -6,21 +6,33 @@ const bandas = [
     {banda: 'Soda Stereo', cancion: 'Cuando pase el temblor'}
 ]
 
+
 const app = Vue.createApp({
     data(){
         return {
             bandas,
-            mensaje: 'Hola mundo'
+            saludo: 'hola mundo'
         }
     },
 
     methods: {
-        addMensaje() {
+        addSaludo(){
+            this.bandas.push({
+                banda: this.saludo
+            })
+        },
+        addSaludoPrimero(){
             this.bandas.unshift({
-                banda: this.mensaje
+                banda: this.saludo
+            })
+        },
+        deleteSaludo(){
+            this.bandas.pop({
+                banda: this.saludo
             })
         }
-    },
+    }
+
 })
 
-app.mount('#myapp')
+app.mount('.myapp')
